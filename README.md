@@ -23,16 +23,30 @@ A test build of LightCraft with the channel mixer and these recipes built in, ru
 
 ### 1. Start here
 
-The playground opens on a 590 nm photo of Mt. Hood, with the recipes on the right and a short "start here" card:
+The playground opens on a 590 nm photo of Mt. Hood, with the recipes on the right and a short "start here" card
+(to use your own photos, see [below](#use-your-own-ir-photos)):
 
 ![The playground on a first visit](guide/1-first-visit.jpg)
 
 ![The start-here card](guide/2-start-card.jpg)
 
-More photos: **Help ▸ Sample IR Photos** has three more (a forest road, a river canyon and a train), or drag your own
-raw files onto the window.
+More sample photos: **Help ▸ Sample IR Photos** has three more (a forest road, a river canyon and a train).
 
 ![Help, Sample IR Photos](guide/6-sample-photos-menu.jpg)
+
+### Use your own IR photos
+
+Either way works:
+
+- **Drag** one or more files from your computer onto the playground window, or
+- choose **File ▸ Import Photos…** and pick them.
+
+They appear in the strip of thumbnails along the bottom; **click one** to edit it. Raw files work best (Sony ARW,
+Canon CR2/CR3, Nikon NEF, Fujifilm RAF, Olympus ORF, Panasonic RW2, Pentax PEF, DNG and more), but JPEG, TIFF and PNG
+work too. A JPEG has already had the camera's white balance and colours baked in, so recipes have less to work with.
+
+Your photos never leave your computer: the playground copies them into your browser's own storage, so they're still
+there next time you visit. They do take up space there; the originals on your computer aren't touched.
 
 ### 2. Click a recipe
 
