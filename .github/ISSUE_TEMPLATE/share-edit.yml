@@ -1,0 +1,42 @@
+name: Share an edit from the IR playground
+description: Usually opened for you by "Share This IR Edit…" in the online playground.
+title: "Shared edit: "
+labels: ["shared edit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing! The playground filled in most of this. **Your edited image is on your clipboard:**
+        click the "Your image" box below and press Ctrl+V (⌘V on a Mac). If that doesn't work, drag in the copy
+        it saved to your Downloads folder.
+  - type: input
+    id: filter
+    attributes:
+      label: Filter
+      description: "590 nm, 665 nm, 720 nm, 850 nm, full spectrum + a filter, or other."
+    validations:
+      required: true
+  - type: input
+    id: camera
+    attributes:
+      label: Camera
+  - type: input
+    id: lens
+    attributes:
+      label: Lens
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: What you were going for, what you clicked with the picker, anything that surprised you.
+  - type: textarea
+    id: images
+    attributes:
+      label: Your image
+      description: Paste with Ctrl+V / ⌘V, or drag and drop. A before picture is welcome too.
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings
+      description: The edit as a LightCraft preset. Please leave this as it is.
+      render: json

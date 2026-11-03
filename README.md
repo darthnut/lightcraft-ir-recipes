@@ -4,50 +4,85 @@ Fifteen presets for playing with infrared photos in [LightCraft](https://github.
 RGB channel mixer proposed in [storytold/lightcraft#3579](https://github.com/storytold/lightcraft/pull/3579). They're for
 experimenting: some look good, some look wild, a few look silly on purpose.
 
-**Not official, not part of LightCraft,** and they only work in a build of that pull request (see below). They were
-tuned on one camera: a Sony A6000 converted with a 590 nm filter.
+**Not official, not part of LightCraft.** They were tuned on one camera: a Sony A6000 converted with a 590 nm filter.
+**Edits from other cameras and filters are exactly what's missing,** so if you shoot IR, please try them and share
+what you find.
 
 ![The fifteen recipes on one 590 nm photo of Mt. Hood](contact-sheet.jpg)
 
-## Getting a build with the mixer
+## Try it in your browser
 
-The mixer isn't in a LightCraft release yet. To try it, build the pull request's branch (you need [Rust](https://rustup.rs)):
+### ▶ [Open the IR playground](https://darthnut.github.io/lightcraft-ir-recipes/)
 
-```bash
-git clone --branch feat/channel-mixer https://github.com/darthnut/lightcraft.git lightcraft-mixer
-```
+A test build of LightCraft with the channel mixer and these recipes built in, running entirely in your browser:
 
-```bash
-cd lightcraft-mixer
-```
+- **Nothing to install.** Use a laptop or desktop; it's tested in Chrome and is too cramped on a phone.
+- **Your photos stay on your computer.** They're stored in the browser, never uploaded.
+- **The first visit downloads about 35 MB** (the app and one sample raw), then the browser keeps it.
+- **It's slower than a desktop app:** each change takes a second or two to render on a 24 MP raw.
 
-```bash
-cargo run --release -p lightcraft -- --library ~/lightcraft-mixer-test
-```
+### 1. Start here
 
-The `--library` folder keeps this test build away from your real LightCraft library. LightCraft's own README covers
-build requirements and low-memory build settings.
+The playground opens on a 590 nm photo of Mt. Hood, with the recipes on the right and a short "start here" card:
 
-## Install the recipes
+![The playground on a first visit](guide/1-first-visit.jpg)
 
-Download [`IR Recipes.lcpreset`](IR%20Recipes.lcpreset). In the Presets panel, click **Import Presets…** and choose it.
-They appear in three groups: **IR Recipes 1 · Classic**, **2 · Wild** and **3 · Silly**.
+![The start-here card](guide/2-start-card.jpg)
 
-## Use one
+More photos: **Help ▸ Sample IR Photos** has three more (a forest road, a river canyon and a train), or drag your own
+raw files onto the window.
 
-1. Click a recipe.
-2. If its name says **(pick …)**, click the Channel Mixer's neutral picker and click on what it names:
-   - **snow/cloud/concrete:** anything that should be white or grey.
-   - **foliage:** bright leafy trees or grass.
+![Help, Sample IR Photos](guide/6-sample-photos-menu.jpg)
 
-   The picker fits the recipe to your photo. Skipping it gives a fairly random colour cast.
-3. Set Exposure, Highlights and Shadows to taste. The recipes don't touch them, except Day for Night.
+### 2. Click a recipe
 
-**Switching recipes:** apply the new recipe, then pick again. A recipe resets the mixer.
+Click any recipe under **IR Recipes 1 · Classic**, **2 · Wild** or **3 · Silly**. If its name ends in **(no pick)**,
+that's it, you're done.
 
-**White balance jumps to 2000 K:** the picked recipes set it on purpose. A 590 nm raw is so red that some mixers black
-out the spot before the picker can measure it, and it refuses ("pick a brighter, less saturated area"). The pick
-cancels white balance anyway, so this doesn't change the colours.
+### 3. If it says "(pick …)", pick
+
+Most recipes fit themselves to your photo with one click. In the **Channel Mixer** section, click the picker:
+
+![The Channel Mixer's picker](guide/3-picker-button.jpg)
+
+Then click on what the recipe names:
+
+- **snow/cloud/concrete:** anything that should come out white or grey.
+- **foliage:** bright leafy trees or grass.
+
+![Before and after picking the snow](guide/4-pick-before-after.jpg)
+
+Then raise **Exposure** (in **Light**) until it looks right; picked photos often come out dark. Highlights and Shadows
+are yours to play with too.
+
+**Switching recipes:** click the new recipe, then pick again. A recipe resets the mixer.
+
+**"Pick a brighter, less saturated area":** click somewhere brighter. Snow and clouds are the safest.
+
+### 4. Share your edit
+
+Like what you made? Press the blue **Share IR Edit** button (top bar, start-here card, or under the Channel Mixer):
+
+![The share dialog](guide/5-share-dialog.jpg)
+
+Pick your filter, add a note if you like, and press **Open on GitHub**. A new tab opens a GitHub issue that's already
+filled in with your settings and, if ticked, your camera and lens. Your edited image is copied for you:
+**click the "Your image" box and press Ctrl+V** (⌘V on a Mac). Then press **Submit**.
+
+- **Nothing is sent until you press Submit** on GitHub, and you need a free GitHub account for that.
+- **The image carries no hidden data:** it's re-encoded at 2048 px with no EXIF, GPS, serial number or file name.
+  The camera and lens appear only as the text you can see (or untick) in the issue.
+- If the paste doesn't work, the same image was also saved to your Downloads folder as `lightcraft-ir-edit.jpg`:
+  drag it into the box instead.
+
+**Shared edits can become recipes.** Some may be added here, credited, so the next person with a 665 or 720 nm camera
+has a starting point.
+
+## Share without the playground
+
+Already have IR numbers from Photoshop, GIMP, Affinity, Capture One or another editor's channel mixer?
+[Share them with this form](https://github.com/darthnut/lightcraft-ir-recipes/issues/new?template=share-recipe.yml):
+it asks for your filter, camera, white balance and mixer values.
 
 ## The recipes
 
@@ -69,6 +104,12 @@ cancels white balance anyway, so this doesn't change the colours.
 | Day for Night | neutral | Old-Hollywood fake moonlight: dark, blue, desaturated |
 | Mars Holiday | foliage | Everything rust and dust |
 
+("neutral" means pick snow, cloud or concrete.)
+
+**White balance jumps to 2000 K:** the picked recipes set it on purpose. A 590 nm raw is so red that some mixers black
+out the spot before the picker can measure it, and it refuses. The pick cancels white balance anyway, so this doesn't
+change the colours.
+
 ## How they were made
 
 - **Measured, not guessed.** Tutorials disagree about what a 590 nm red/blue swap gives (gold foliage or pink). On this
@@ -77,9 +118,34 @@ cancels white balance anyway, so this doesn't change the colours.
 - **Always pickable.** In every picked recipe, each mixer row adds up to 100 %. That guarantees the neutral picker can
   solve it.
 - **One camera, one scene.** Other filters (665, 720 nm…), cameras and subjects will land differently. That's the
-  experiment: if you find better numbers for your setup, please share them.
+  experiment.
 
 `make_recipes.py` regenerates the preset file. Edit the numbers, run `python make_recipes.py`, then delete the old
 presets in LightCraft before importing again: importing doesn't replace a preset with the same id.
 
-Made by darthnut with Claude (Anthropic). Licensed MIT or Apache-2.0, like LightCraft.
+## Using a desktop build instead
+
+The playground is the easy way in. For full speed, build the pull request's branch yourself (you need
+[Rust](https://rustup.rs)):
+
+```bash
+git clone --branch feat/channel-mixer https://github.com/darthnut/lightcraft.git lightcraft-mixer
+```
+
+```bash
+cd lightcraft-mixer
+```
+
+```bash
+cargo run --release -p lightcraft -- --library ~/lightcraft-mixer-test
+```
+
+The `--library` folder keeps this test build away from your real LightCraft library. Then download
+[`IR Recipes.lcpreset`](IR%20Recipes.lcpreset) and, in the Presets panel, click **Import Presets…** and choose it.
+
+The playground itself is built from the `ir-playground` branch of
+[darthnut/lightcraft](https://github.com/darthnut/lightcraft/tree/ir-playground).
+
+Made by darthnut with Claude (Anthropic). Licensed MIT or Apache-2.0, like LightCraft. The sample photos are by
+darthnut, shared under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/): free to use and adapt with
+credit, not for commercial use.
