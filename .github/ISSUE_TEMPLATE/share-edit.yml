@@ -9,6 +9,8 @@ body:
         Thanks for sharing! The playground filled in most of this. **Your edited image is on your clipboard:**
         click the "Your image" box below and press Ctrl+V (⌘V on a Mac). If that doesn't work, drag in the copy
         it saved to your Downloads folder.
+
+        **Then press "Create" (or "Submit new issue") at the bottom.** Nothing is shared until you do.
   - type: input
     id: filter
     attributes:
