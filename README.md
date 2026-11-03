@@ -126,13 +126,15 @@ change the colours.
 
 ## How they were made
 
-- **Measured, not guessed.** Tutorials disagree about what a 590 nm red/blue swap gives (gold foliage or pink). On this
-  camera it's pink. So the colours of snow, foliage and sky were measured in a real raw. Each "wild" mixer was solved
-  to send those colours to a target hue, then checked by rendering it.
+- **Fitted to one photo.** Tutorials disagree about what a 590 nm red/blue swap gives (gold foliage or pink). On this
+  camera it's pink. So rather than copy tutorial numbers, the colours of snow, foliage and sky were measured in one raw
+  from this camera, each "wild" mixer was solved to send those colours to a target hue, and the result was checked by
+  rendering it.
+- **A starting point, not a rule.** That makes the recipes a reasonable start for a 590 nm A6000 and an educated guess
+  for everything else: other filters (665, 720 nm…), other cameras' sensors and other subjects will land differently.
+  Finding out how differently is the point of sharing edits.
 - **Always pickable.** In every picked recipe, each mixer row adds up to 100 %. That guarantees the neutral picker can
-  solve it.
-- **One camera, one scene.** Other filters (665, 720 nm…), cameras and subjects will land differently. That's the
-  experiment.
+  solve it, whatever the camera.
 
 `make_recipes.py` regenerates the preset file. Edit the numbers, run `python make_recipes.py`, then delete the old
 presets in LightCraft before importing again: importing doesn't replace a preset with the same id.
