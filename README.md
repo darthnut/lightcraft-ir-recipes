@@ -1,12 +1,37 @@
-# IR recipes for LightCraft's channel mixer
+# Test a channel mixer for infrared photos in LightCraft
 
-Fifteen presets for playing with infrared photos in [LightCraft](https://github.com/storytold/lightcraft), using the
-RGB channel mixer proposed in [storytold/lightcraft#3579](https://github.com/storytold/lightcraft/pull/3579). They're for
-experimenting: some look good, some look wild, a few look silly on purpose.
+[LightCraft](https://github.com/storytold/lightcraft) is an open-source photo editor modelled on Lightroom. Like
+Lightroom, it has no **channel mixer**, the tool infrared photographers need for the classic red/blue channel swap,
+which usually means a round trip through Photoshop. Pull request
+[storytold/lightcraft#3579](https://github.com/storytold/lightcraft/pull/3579) adds one, and **it needs testing by
+people who shoot IR** before it can be merged.
 
-**Not official, not part of LightCraft.** They were tuned on one camera: a Sony A6000 converted with a 590 nm filter.
-**Edits from other cameras and filters are exactly what's missing,** so if you shoot IR, please try them and share
-what you find.
+**Not official, not part of LightCraft:** this is a test build by the pull request's author.
+
+## The channel mixer: what to test
+
+![The Channel Mixer panel](guide/0-channel-mixer.jpg)
+
+It sits in the edit panel under **Channel Mixer**:
+
+- **Red, Green and Blue Output:** each output channel is a mix of the photo's red, green and blue (−200 to +200 %).
+  This is the same model as Photoshop's channel mixer, so numbers from Photoshop tutorials carry over.
+- **Swap Red and Blue:** the classic IR swap in one click.
+- **The neutral picker** (the eyedropper): click something that should be white or grey, like snow, cloud or
+  concrete, and it balances the mix so that spot comes out neutral. This replaces the usual "white balance on foliage,
+  then swap" dance.
+
+**What would help most:**
+
+- **Edits from your camera and filter.** Everything so far was made on one camera: a Sony A6000 with a 590 nm filter.
+  665, 720 and 850 nm, full-spectrum and other sensors are untested. [Share your edits](#4-share-your-edit).
+- **Problems.** A pick that fails or gives a strange cast, sliders that behave oddly, a raw that won't open, anything
+  that's confusing: [open an issue](https://github.com/darthnut/lightcraft-ir-recipes/issues/new) and say what
+  you did.
+- **Comparisons.** If you also edit IR in Photoshop or another editor, does the same mix give the same result here?
+
+To get started, there are **fifteen recipes** (presets) built on the mixer: some look good, some look wild, a few look
+silly on purpose. They're starting points; open the Channel Mixer after applying one to see how it's made.
 
 ![The fifteen recipes on one 590 nm photo of Mt. Hood](contact-sheet.jpg)
 
@@ -48,10 +73,15 @@ work too. A JPEG has already had the camera's white balance and colours baked in
 Your photos never leave your computer: the playground copies them into your browser's own storage, so they're still
 there next time you visit. They do take up space there; the originals on your computer aren't touched.
 
-### 2. Click a recipe
+### 2. Mix, or start from a recipe
 
-Click any recipe under **IR Recipes 1 · Classic**, **2 · Wild** or **3 · Silly**. If its name ends in **(no pick)**,
-that's it, you're done.
+**The mixer is what's being tested, so please play with it directly.** In **Channel Mixer**, press **Swap Red and
+Blue** or set the Red, Green and Blue Output sliders yourself, then pick a neutral spot (step 3) and keep adjusting.
+Try the mixes you'd use in Photoshop, and try breaking it.
+
+**Recipes are a shortcut:** click one under **IR Recipes 1 · Classic**, **2 · Wild** or **3 · Silly**, then open
+Channel Mixer to see how it's made and change it from there. If a recipe's name ends in **(no pick)**, it needs no
+step 3.
 
 ### 3. If it says "(pick …)", pick
 
