@@ -130,44 +130,9 @@ it asks for your filter, camera, white balance and mixer values.
 
 ## The recipes
 
-| Recipe | Pick | Look |
-| --- | --- | --- |
-| Classic Swap | neutral | The textbook red/blue swap. On a 590 nm filter that gives pink foliage and a teal sky |
-| Hood River Pink | neutral | The colour settings of the Mt. Hood edit in the pull request |
-| White Foliage, Blue Sky | foliage | White trees under a blue sky |
-| Gold Foliage, Blue Sky | neutral | Gold trees, the look many 590 nm tutorials show |
-| Soft Pastel | neutral | Half swap, low contrast, a faint pink/teal split tone |
-| IR Mono, Wood Effect | none | Black and white from the red channel, punchy |
-| IR Mono, Soft Glow | none | Same source, negative Clarity for a dreamy glow |
-| Faux Aerochrome | neutral | Red foliage in the style of Kodak Aerochrome film |
-| Fake Summer | neutral | Green trees again, though not quite the right green |
-| Teal Forest, Orange Sky | neutral | Complementary teal and orange |
-| Lava Fields | neutral | Brick-red land under a violet sky |
-| Alien Planet | neutral | Magenta trees, a green-tinted sky |
-| Night Vision Goggles | none | Green phosphor, vignette and grain; lower Exposure if it's too bright |
-| Day for Night | neutral | Old-Hollywood fake moonlight: dark, blue, desaturated |
-| Mars Holiday | foliage | Everything rust and dust |
-
-("neutral" means pick snow, cloud or concrete.)
-
-**White balance jumps to 2000 K:** the picked recipes set it on purpose. A 590 nm raw is so red that some mixers black
-out the spot before the picker can measure it, and it refuses. The pick cancels white balance anyway, so this doesn't
-change the colours.
-
-## How they were made
-
-- **Fitted to one photo.** Tutorials disagree about what a 590 nm red/blue swap gives (gold foliage or pink). On this
-  camera it's pink. So rather than copy tutorial numbers, the colours of snow, foliage and sky were measured in one raw
-  from this camera, each "wild" mixer was solved to send those colours to a target hue, and the result was checked by
-  rendering it.
-- **A starting point, not a rule.** That makes the recipes a reasonable start for a 590 nm A6000 and an educated guess
-  for everything else: other filters (665, 720 nm…), other cameras' sensors and other subjects will land differently.
-  Finding out how differently is the point of sharing edits.
-- **Always pickable.** In every picked recipe, each mixer row adds up to 100 %. That guarantees the neutral picker can
-  solve it, whatever the camera.
-
-`make_recipes.py` regenerates the preset file. Edit the numbers, run `python make_recipes.py`, then delete the old
-presets in LightCraft before importing again: importing doesn't replace a preset with the same id.
+The fifteen recipes now live in their own repository,
+**[darthnut/lightcraft-ir-presets](https://github.com/darthnut/lightcraft-ir-presets)**: what each one does, how they
+were made, and downloads (all fifteen in one file, or one at a time). The playground has the same recipes built in.
 
 ## Using a desktop build instead
 
@@ -187,7 +152,8 @@ cargo run --release -p lightcraft -- --library ~/lightcraft-mixer-test
 ```
 
 The `--library` folder keeps this test build away from your real LightCraft library. Then download
-[`IR Recipes.lcpreset`](IR%20Recipes.lcpreset) and, in the Presets panel, click **Import Presets…** and choose it.
+the recipes from [lightcraft-ir-presets](https://github.com/darthnut/lightcraft-ir-presets/releases/latest) and, in the
+Presets panel, click **Import Presets…** and choose them.
 
 The playground itself is built from the `ir-playground` branch of
 [darthnut/lightcraft](https://github.com/darthnut/lightcraft/tree/ir-playground).
