@@ -96,10 +96,17 @@ Then click on what the recipe names:
 
 ![Before and after picking the snow](guide/4-pick-before-after.jpg)
 
-Then raise **Exposure** (in **Light**) until it looks right; picked photos often come out dark. Highlights and Shadows
-are yours to play with too.
+Then set **Exposure** (in **Light**) to taste: the picker never changes it. If a strong mix had to be scaled down to
+fit the sliders, a message says how much darker the photo came out ("Darker by 0.4…"): raise Exposure by about that
+much. Highlights and Shadows are yours to play with too.
 
-**Switching recipes:** click the new recipe, then pick again. A recipe resets the mixer.
+**Switching recipes:** pick once, then click through recipes freely. The playground remembers where you picked on
+each photo and re-picks that same spot for every recipe you click (the preview while hovering shows the re-picked
+result too, and one undo takes back recipe and pick together). It only reuses a pick of the same kind: going between a
+"snow/cloud/concrete" recipe and a "(pick foliage)" one, pick once more. The spot is forgotten when you reload the
+page.
+
+This is a playground convenience: in LightCraft itself, a recipe resets the mixer, so pick again after each one.
 
 **"Pick a brighter, less saturated area":** click somewhere brighter. Snow and clouds are the safest.
 
